@@ -11,7 +11,7 @@ export const environment = {
   production: false,
   development: true,
   staging: false,
-  apiUrl: getEnvVar('VITE_API_URL', 'http://localhost:8000'),
+  apiUrl: getEnvVar('VITE_API_URL', 'http://localhost:8001'),
   oauth2: {
     issuer: getEnvVar('VITE_OAUTH2_ISSUER', 'http://localhost:8080/realms/cuidar'),
     clientId: getEnvVar('VITE_OAUTH2_CLIENT_ID', 'cuidar-web'),

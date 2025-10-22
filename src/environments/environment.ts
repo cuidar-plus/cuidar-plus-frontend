@@ -2,7 +2,7 @@ export const environment = {
   production: false,
   development: true,
   staging: false,
-  apiUrl: 'http://localhost:8000',
+  apiUrl: 'http://localhost:8001',
   oauth2: {
     issuer: 'http://localhost:8080/realms/cuidar',
     clientId: 'cuidar-web',

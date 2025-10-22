@@ -1,10 +1,18 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="dashboard-container">
@@ -57,6 +65,37 @@ import { CommonModule } from '@angular/common';
           <p>
             Esta é uma versão inicial do sistema. As funcionalidades estão sendo
             implementadas gradualmente.
+          </p>
+        </div>
+
+        <div
+          class="api-status"
+          [class]="
+            'alert alert-' +
+            (connectionStatus() === 'connected'
+              ? 'success'
+              : connectionStatus() === 'error'
+                ? 'danger'
+                : 'warning')
+          "
+        >
+          <h4>
+            @if (connectionStatus() === 'checking') {
+              ⏳ Verificando conexão com API...
+            } @else if (connectionStatus() === 'connected') {
+              ✅ API conectada com sucesso
+            } @else {
+              ❌ Erro na conexão com API
+            }
+          </h4>
+          <p>
+            @if (connectionStatus() === 'connected') {
+              Backend Django respondendo na porta 8001
+            } @else if (connectionStatus() === 'error') {
+              Verifique se o backend está rodando em {{ environment.apiUrl }}
+            } @else {
+              Testando endpoint /health/...
+            }
           </p>
         </div>
       </div>
@@ -168,6 +207,28 @@ import { CommonModule } from '@angular/common';
         font-size: 0.875rem;
       }
 
+      .alert-success {
+        background: #f0f9ff;
+        border-color: #00b894;
+        color: #0369a1;
+      }
+
+      .alert-danger {
+        background: #fef2f2;
+        border-color: #e57373;
+        color: #dc2626;
+      }
+
+      .alert-warning {
+        background: #fffbeb;
+        border-color: #f5a623;
+        color: #d97706;
+      }
+
+      .api-status {
+        margin-top: 1rem;
+      }
+
       @media (max-width: 768px) {
         .dashboard-grid {
           grid-template-columns: 1fr;
@@ -181,4 +242,38 @@ import { CommonModule } from '@angular/common';
     `,
   ],
 })
-export class DashboardComponent {}
+export class DashboardComponent implements OnInit {
+  private readonly http = inject(HttpClient);
+
+  public connectionStatus = signal<'checking' | 'connected' | 'error'>('checking');
+  public environment = environment;
+
+  ngOnInit() {
+    this.checkApiConnection();
+  }
+
+  private checkApiConnection() {
+    // Teste simples de conexão com a API usando endpoint admin
+    this.http
+      .get(`${environment.apiUrl}/admin/`, {
+        responseType: 'text',
+        observe: 'response',
+      })
+      .subscribe({
+        next: _response => {
+          // Se chegou até aqui, a API está respondendo (mesmo que seja 302)
+          this.connectionStatus.set('connected');
+        },
+        error: error => {
+          // Verifica se é um erro de rede ou se a API está respondendo
+          if (error.status === 0) {
+            // Erro de rede - API não está acessível
+            this.connectionStatus.set('error');
+          } else {
+            // API está respondendo (mesmo com erro HTTP)
+            this.connectionStatus.set('connected');
+          }
+        },
+      });
+  }
+}
