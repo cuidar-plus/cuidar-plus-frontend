@@ -72,20 +72,17 @@ FROM node:20-alpine AS development
 
 WORKDIR /app
 
-# Habilitar Corepack
-RUN corepack enable
-
 # Instalar dependências globais
-RUN pnpm add -g @angular/cli
+RUN npm install -g @angular/cli
 
 # Copiar arquivos de dependência
-COPY package.json pnpm-lock.yaml* ./
+COPY package.json package-lock.json* ./
 
 # Instalar dependências
-RUN pnpm install
+RUN npm install
 
 # Expor porta de desenvolvimento
 EXPOSE 4200
 
 # Comando padrão para desenvolvimento
-CMD ["pnpm", "start", "--host", "0.0.0.0", "--port", "4200"]
+CMD ["npm", "run", "dev"]
