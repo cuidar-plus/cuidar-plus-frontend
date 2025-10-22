@@ -44,9 +44,7 @@
         "ignoreProperties": []
       }
     ],
-    "declaration-block-trailing-semicolon": null,
     "no-descending-specificity": null,
-    "string-quotes": "single",
     "color-function-notation": "legacy",
     "alpha-value-notation": "number"
   },

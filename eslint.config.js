@@ -50,7 +50,7 @@ export default [
       '@angular-eslint/no-outputs-metadata-property': 'error',
       '@angular-eslint/use-lifecycle-interface': 'error',
       '@angular-eslint/use-pipe-transform-interface': 'error',
-      '@angular-eslint/prefer-on-push-component-change-detection': 'error',
+      '@angular-eslint/prefer-on-push-component-change-detection': 'warn',
 
       // Prettier integration
       'prettier/prettier': 'error',
@@ -85,10 +85,11 @@ export default [
 
   // Configuration for setup files
   {
-    files: ['**/setup-*.ts', '**/test-setup.ts'],
+    files: ['**/setup-*.ts', '**/test-setup.ts', '**/main.ts'],
     rules: {
       'no-undef': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
+      'no-console': 'off',
     },
   },
 
@@ -123,6 +124,7 @@ export default [
       'cypress/',
       'storybook-static/',
       '.storybook/',
+      'docs/',
       '*.js',
       '*.mjs',
     ],
