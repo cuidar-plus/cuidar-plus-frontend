@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cuidar+ Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4A90E2",
+            "background-light": "#f6f7f8",
+            "background-dark": "#111921",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full">
+<!-- Main Content (dimmed) -->
+<div class="flex-1 bg-gray-200 dark:bg-gray-800 opacity-50 p-8">
+<h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Dashboard Principal</h1>
+<p class="text-gray-600 dark:text-gray-400 mt-2">Conteúdo da aplicação em segundo plano.</p>
+</div>
+<!-- Notifications Drawer -->
+<div class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-background-dark shadow-lg flex flex-col font-display">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 bg-primary text-white">
+<h1 class="text-xl font-bold">Notificações</h1>
+<button class="text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Notifications List -->
+<div class="flex-1 overflow-y-auto p-2 space-y-2">
+<!-- Today Group -->
+<div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 px-2 pb-1">Hoje</p>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between rounded-lg">
+<div class="flex items-center gap-4">
+<div class="text-[#EB5757] flex items-center justify-center rounded-lg bg-[#EB5757]/20 shrink-0 size-12">
+<span class="material-symbols-outlined">pill</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal line-clamp-1">Medicação atrasada</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Há 15 min</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center"><div class="size-3 rounded-full bg-[#EB5757]"></div></div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between rounded-lg mt-2">
+<div class="flex items-center gap-4">
+<div class="text-[#27AE60] flex items-center justify-center rounded-lg bg-[#27AE60]/20 shrink-0 size-12">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal line-clamp-1">Novo paciente cadastrado</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Hoje às 09:30</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center"><div class="size-3 rounded-full bg-[#27AE60]"></div></div>
+</div>
+</div>
+</div>
+<!-- Tomorrow Group -->
+<div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 px-2 pb-1">Amanhã</p>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between rounded-lg">
+<div class="flex items-center gap-4">
+<div class="text-[#F2994A] flex items-center justify-center rounded-lg bg-[#F2994A]/20 shrink-0 size-12">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal line-clamp-1">Visita agendada</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Amanhã às 10:00</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center"><div class="size-3 rounded-full bg-[#F2994A]"></div></div>
+</div>
+</div>
+</div>
+<!-- Empty State (Example - uncomment to view) -->
+<!-- 
+        <div class="flex flex-col items-center justify-center h-full text-center text-gray-400 dark:text-gray-500">
+            <span class="material-symbols-outlined text-6xl">notifications_off</span>
+            <p class="mt-4 text-lg font-medium">Nenhuma notificação nova</p>
+            <p class="text-sm">Você está em dia!</p>
+        </div>
+        -->
+</div>
+</div>
+</div>
+</body></html>

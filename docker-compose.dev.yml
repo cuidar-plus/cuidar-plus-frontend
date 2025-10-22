@@ -1,0 +1,84 @@
+# =============================================================================
+# Docker Compose para Desenvolvimento - Cuidar+ Frontend
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # Frontend Angular
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: cuidar-frontend-dev
+    ports:
+      - "4200:4200"
+    volumes:
+      # Bind mount do código fonte para hot-reload
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_API_URL=http://api:8000
+      - VITE_OAUTH2_ISSUER=http://localhost:8080/realms/cuidar
+      - VITE_OAUTH2_CLIENT_ID=cuidar-web
+    env_file:
+      - .env.local
+    depends_on:
+      - api
+    networks:
+      - cuidar-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Mock API para desenvolvimento (opcional)
+  api:
+    image: mockserver/mockserver:5.15.0
+    container_name: cuidar-api-mock
+    ports:
+      - "8000:1080"
+    environment:
+      - MOCKSERVER_PROPERTY_FILE=/config/mockserver.properties
+      - MOCKSERVER_INITIALIZATION_JSON_PATH=/config/mock-api.json
+    volumes:
+      - ./docker/mock-api.json:/config/mock-api.json:ro
+      - ./docker/mockserver.properties:/config/mockserver.properties:ro
+    networks:
+      - cuidar-network
+    restart: unless-stopped
+
+  # Storybook para Design System
+  storybook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: cuidar-storybook-dev
+    ports:
+      - "6006:6006"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: ["pnpm", "storybook"]
+    environment:
+      - NODE_ENV=development
+    networks:
+      - cuidar-network
+    restart: unless-stopped
+    profiles:
+      - storybook
+
+networks:
+  cuidar-network:
+    driver: bridge
+    name: cuidar-network
+
+volumes:
+  node_modules:
+    name: cuidar-frontend-node-modules

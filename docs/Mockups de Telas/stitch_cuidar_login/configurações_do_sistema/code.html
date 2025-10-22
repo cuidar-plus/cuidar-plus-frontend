@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configurações do Sistema</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4a99e8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a2530",
+                        "text-light": "#0e141b",
+                        "text-dark": "#f8fafb",
+                        "subtext-light": "#4f7396",
+                        "subtext-dark": "#a0b3c6",
+                        "border-light": "#d0dbe6",
+                        "border-dark": "#334155"
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full">
+<aside class="w-64 bg-card-light dark:bg-card-dark p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Patient profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhPOHWbrNQgkHbTE89dt0br_Yp-q7rCYZqFydt4G9WWZuuiB0BB4jeHocqwF6WpxnQ8BdbRd_9ABuqQ2aeQGcVa5_0xc-whkhD01UDChHrvJ7lcKBJqsAdTFYnUzPNFS_MrpoWoK_qqM3pNs-09oi-IZWX2ZjDBvGL2nkGMddnIx8rTKd1IEWFhDI9I6Qkw066lLODm2koQmwvWsYDGERmgYCI9Hs_zu1hZ7klE-gR4YiMedJfVEo8uy9EwIQh_C1vp5u-YOI2-Sdx");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Maria Santos</h1>
+<p class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">Patient ID: 12345</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Appointments</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<p class="text-sm font-medium leading-normal">Medical Records</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30 text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Configurações</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-subtext-light dark:text-subtext-dark rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-center mb-8">
+<p class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">Configurações do Sistema</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+<div class="p-6">
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em]">Usuários</p>
+</div>
+<div class="px-6 pb-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-normal">Enable New User Registration</p>
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-border-light dark:bg-border-dark p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-6 w-6 rounded-full bg-white transition-transform"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+<label class="flex flex-col w-full">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Default User Role</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal">
+<option>Patient</option>
+<option>Doctor</option>
+<option>Admin</option>
+</select>
+</label>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+<div class="p-6">
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em]">Permissões</p>
+</div>
+<div class="px-6 pb-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-normal">Allow Access to Patient Records</p>
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-border-light dark:bg-border-dark p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-6 w-6 rounded-full bg-white transition-transform"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+<label class="flex flex-col w-full">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Admin Privileges</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal">
+<option>Full Access</option>
+<option>Read Only</option>
+<option>No Access</option>
+</select>
+</label>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+<div class="p-6">
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em]">Temas</p>
+</div>
+<div class="px-6 pb-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-normal">Enable Dark Mode</p>
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-border-light dark:bg-border-dark p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-6 w-6 rounded-full bg-white transition-transform"></div>
+<input class="invisible absolute" onchange="document.documentElement.classList.toggle('dark')" type="checkbox"/>
+</label>
+</div>
+<label class="flex flex-col w-full">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Color Scheme</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal">
+<option>Serenity Blue</option>
+<option>Calm Green</option>
+<option>Peaceful Purple</option>
+</select>
+</label>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+<div class="p-6">
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em]">Notificações</p>
+</div>
+<div class="px-6 pb-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-normal">Email Notifications for Appointments</p>
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-border-light dark:bg-border-dark p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-6 w-6 rounded-full bg-white transition-transform"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-normal">Push Notifications for Lab Results</p>
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-border-light dark:bg-border-dark p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-6 w-6 rounded-full bg-white transition-transform"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+<label class="flex flex-col w-full">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Notification Frequency</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal">
+<option>Immediately</option>
+<option>Daily Digest</option>
+<option>Weekly Digest</option>
+</select>
+</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

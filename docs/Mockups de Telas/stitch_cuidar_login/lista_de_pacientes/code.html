@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6495ED",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#111921",
+                        "text-dark": "#333333",
+                        "text-light": "#666666"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex h-full grow flex-row">
+<aside class="flex flex-col gap-y-6 p-4 bg-white dark:bg-background-dark border-r border-gray-200 dark:border-gray-700 w-64">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A portrait of Dr. João" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSncdll1GMAsF6sSgQE3kJUw4gANstbfXmhuHNAqvEgw2bZjgLkbnD1oiKSzeQH8vC0InyyxsdyKSg8pE3cXpIgM5nnN8Gk4JOsmYEL8V27WXS3ZAd2df3278A4h6cIo2JqsT41o3nLoovaP1kufl3RkqgENfn8q692PyPclxb6255cwhzYZ30rsFysQrIi3gUisLCpXUGxFQhlcNdBrl6sgFsQ_EDf6EYh-VUAnzbiftcF2AAnkXgdDl6dMkaKPv7DgC9CXgUYYkd");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-dark dark:text-white text-base font-medium">Dr. João</h1>
+<p class="text-text-light dark:text-gray-400 text-sm">Clínica Médica</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-text-dark dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">groups</span>
+<p class="text-sm font-medium">Pacientes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-dark dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium">Agenda</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-dark dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">wallet</span>
+<p class="text-sm font-medium">Financeiro</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-dark dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium">Relatórios</p>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-text-dark dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Sair</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-text-dark dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Configurações</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-dark dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<p class="text-sm font-medium">Ajuda</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-6">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<h1 class="text-text-dark dark:text-white text-3xl font-bold">Lista de Pacientes</h1>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary hover:bg-blue-500 text-white text-sm font-bold shadow-sm">
+<span class="truncate">+ Novo Paciente</span>
+</button>
+</div>
+<div class="flex flex-col md:flex-row gap-4 mb-4">
+<div class="flex-1">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-light dark:text-gray-400 flex border-none bg-white dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-text-dark dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-full placeholder:text-text-light dark:placeholder:text-gray-400 px-4 text-base" placeholder="Pesquisar por nome..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3">
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 px-4 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+<p class="text-text-dark dark:text-white text-sm font-medium">Todos</p>
+<span class="material-symbols-outlined text-text-light dark:text-gray-400">expand_more</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 px-4 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+<p class="text-text-dark dark:text-white text-sm font-medium">Ativo</p>
+<span class="material-symbols-outlined text-text-light dark:text-gray-400">expand_more</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 px-4 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+<p class="text-text-dark dark:text-white text-sm font-medium">Pendente</p>
+<span class="material-symbols-outlined text-text-light dark:text-gray-400">expand_more</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-gray-50 dark:bg-gray-700">
+<th class="px-6 py-4 text-sm font-semibold text-text-dark dark:text-white">ID</th>
+<th class="px-6 py-4 text-sm font-semibold text-text-dark dark:text-white">Nome</th>
+<th class="px-6 py-4 text-sm font-semibold text-text-dark dark:text-white">Status</th>
+<th class="px-6 py-4 text-sm font-semibold text-text-dark dark:text-white">Responsável</th>
+<th class="px-6 py-4 text-sm font-semibold text-text-dark dark:text-white">Última visita</th>
+<th class="px-6 py-4 text-sm font-semibold text-text-dark dark:text-white">Ações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50">
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">#001</td>
+<td class="px-6 py-4 text-sm font-medium text-text-dark dark:text-white">Ana da Silva</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Ativo</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">Dr. Carlos</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">15/07/2023</td>
+<td class="px-6 py-4 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">View</a>
+</td>
+</tr>
+<tr class="bg-gray-50 dark:bg-gray-900/50 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700/50">
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">#002</td>
+<td class="px-6 py-4 text-sm font-medium text-text-dark dark:text-white">Bruno Costa</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Ativo</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">Dr. Carlos</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">12/07/2023</td>
+<td class="px-6 py-4 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">View</a>
+</td>
+</tr>
+<tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50">
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">#003</td>
+<td class="px-6 py-4 text-sm font-medium text-text-dark dark:text-white">Carla Dias</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">Pendente</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">Dra. Sofia</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">10/07/2023</td>
+<td class="px-6 py-4 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">View</a>
+</td>
+</tr>
+<tr class="bg-gray-50 dark:bg-gray-900/50 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700/50">
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">#004</td>
+<td class="px-6 py-4 text-sm font-medium text-text-dark dark:text-white">Daniel Martins</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Ativo</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">Dr. Carlos</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">05/07/2023</td>
+<td class="px-6 py-4 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">View</a>
+</td>
+</tr>
+<tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50">
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">#005</td>
+<td class="px-6 py-4 text-sm font-medium text-text-dark dark:text-white">Eduarda Ferreira</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">Pendente</span>
+</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">Dra. Sofia</td>
+<td class="px-6 py-4 text-sm text-text-light dark:text-gray-400">02/07/2023</td>
+<td class="px-6 py-4 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">View</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between mt-4">
+<p class="text-sm text-text-light dark:text-gray-400">
+                        Showing 1 to 5 of 20 results
+                    </p>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-text-light dark:text-gray-400">chevron_left</span>
+</button>
+<button class="px-4 py-2 text-sm rounded-lg bg-primary text-white">1</button>
+<button class="px-4 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-text-dark dark:text-white">2</button>
+<button class="px-4 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-text-dark dark:text-white">3</button>
+<button class="px-4 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-text-dark dark:text-white">4</button>
+<button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-text-light dark:text-gray-400">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

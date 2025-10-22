@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6C98D6",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#111921",
+                        "text-light": "#333333",
+                        "text-dark": "#F0F0F0",
+                        "border-light": "#F0F0F0",
+                        "border-dark": "#333333",
+                        "badge-admin": "#4A6C9B",
+                        "badge-nurse": "#56B280",
+                        "badge-caregiver": "#86BBD8"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<div class="flex flex-wrap justify-between items-center gap-3 p-4">
+<p class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Usuários do Sistema</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">+ Novo Usuário</span>
+</button>
+</div>
+<div class="px-4 py-3 @container">
+<div class="flex overflow-hidden rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark">
+<table class="flex-1">
+<thead>
+<tr class="bg-background-light dark:bg-background-dark">
+<th class="px-4 py-3 text-left text-text-light dark:text-text-dark text-sm font-medium leading-normal w-1/3">Nome</th>
+<th class="px-4 py-3 text-left text-text-light dark:text-text-dark text-sm font-medium leading-normal w-1/4">Função</th>
+<th class="px-4 py-3 text-left text-text-light dark:text-text-dark text-sm font-medium leading-normal w-1/3">Email</th>
+<th class="px-4 py-3 text-left text-text-light dark:text-text-dark text-sm font-medium leading-normal w-1/6">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-gray-800/20">
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10" data-alt="Profile picture of João da Silva" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApLDhp5MT_7X8w3uhmfCMc7xXNr-FPKhifZ95AfAUPDU5tIgdhMIN0Pqe8PevXHfNQEV57UmsLKg3ObcCiyUiN8dAPIe5DwzWC1ieNQYd2U9v2bpB2jubUE2DcWzXzkk1KpFiXQAwY5umSRWN681Lp26w68o55AfY5nr8AH_CUNCWnzW_cKolN2FdtvKHT_CsEIziOJ3rsjimP8ZTKpxw85ZFnLGDCZHjIV8RtbmzI4WzTOpeXoOyvo8M0By7W2WvW1uCIxhMfOm5l");'></div>
+<span class="text-text-light dark:text-text-dark">João da Silva</span>
+</div>
+</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white bg-badge-admin">Administrador</span>
+</td>
+<td class="h-[72px] px-4 py-2 text-text-light dark:text-text-dark text-sm font-normal leading-normal">joao.silva@example.com</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</td>
+</tr>
+<tr class="border-t border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-gray-800/20">
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10" data-alt="Profile picture of Maria Oliveira" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyFfpaVZcTGrMBa0LBS35H_3_PBjVifgssxbtN_HZymiPMzOyt-Rm9a11Nj0a1ACaQyLLjEJxk5OGZrggQvQYnA612lwDHt4yEwRPVyKyFHOqS9tZlz-L6bTeTFftxK_gh4UFeVn_G1qy1WSpixwsNDSocqsweMDoNzRg3QYuqGMKgNijYM_mn1rYHaUDLRRy-mzOM0jnjnKmE-vRXSc7J4f7UqoN4AK-7x9OLJ3rZEA96DjKFdzuwJ2ymX08V5OOQ4rPvPxNm5Bao");'></div>
+<span class="text-text-light dark:text-text-dark">Maria Oliveira</span>
+</div>
+</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white bg-badge-nurse">Enfermeiro</span>
+</td>
+<td class="h-[72px] px-4 py-2 text-text-light dark:text-text-dark text-sm font-normal leading-normal">maria.oliveira@example.com</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</td>
+</tr>
+<tr class="border-t border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-gray-800/20">
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10" data-alt="Profile picture of Carlos Pereira" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuanvbUXlfQzxC6FGfMpnb9n6oIEX6YnqGWHWPBrwhudTYSClYWgZUAD3xtHik85IW4KFazprKfMO1QZ3S9KLpgXQ4xXbq8Xe_3AnMdSGj2I4lHhCz7kDXbMsLz1kjo_3ZAZxkeqi7OJSguYy9BUFQdnfweWdYKrHuPSAOrY2bCRQaa6A4CtrfRYPAhdei4R4oA4YDD7zPzB1t-i5kzv4QXeFIK_u40x2Bf9I8qTfhQd6EWmijMKeF6j8UHbcZEZxzE6Jg9KIzn9Hp");'></div>
+<span class="text-text-light dark:text-text-dark">Carlos Pereira</span>
+</div>
+</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white bg-badge-caregiver">Cuidador</span>
+</td>
+<td class="h-[72px] px-4 py-2 text-text-light dark:text-text-dark text-sm font-normal leading-normal">carlos.pereira@example.com</td>
+<td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex items-center justify-center p-4">
+<a class="flex size-10 items-center justify-center text-text-light dark:text-text-dark" href="#">
+<span class="material-symbols-outlined">chevron_left</span>
+</a>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-white rounded-full bg-primary" href="#">1</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-full" href="#">2</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-full" href="#">3</a>
+<span class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-full">...</span>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-full" href="#">8</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-full" href="#">9</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-full" href="#">10</a>
+<a class="flex size-10 items-center justify-center text-text-light dark:text-text-dark" href="#">
+<span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

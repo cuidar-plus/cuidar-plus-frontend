@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healthcare App - Pharmacy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3F51B5",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#111921",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1a2734",
+                        "text-light": "#333333",
+                        "text-dark": "#e5e7eb",
+                        "subtext-light": "#6b7280",
+                        "subtext-dark": "#9ca3af",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="flex h-screen">
+<!-- Side NavBar -->
+<aside class="flex-shrink-0 w-64 bg-card-light dark:bg-card-dark flex flex-col p-4 border-r border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="text-primary text-3xl">
+<span class="material-symbols-outlined">
+                        health_and_safety
+                    </span>
+</div>
+<h2 class="text-text-light dark:text-text-dark text-xl font-bold">Healthcare</h2>
+</div>
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzdVbkWJ1kEvNrLVREAYUqPWJdQfLnxI1184KMxcebiVlZM6RD3xSNd4mvLeHnzrDeBOmrm65Qo-MRquRziVdXHA_jA9jKxUWwBbRNFHwO-Nu0RMCj9TRDtVMPgPNCu9iohGYliBEh8ClbF8BB7Zw34l3fcohOUeedE33uCsC2YsYrnrL86iRKFkVRyE7ddil3A70ZJzbp52HWhlnVt4hYyw6x5LvA15GSV4X0NEnBcBOj0ezfcCPBatn3HblmjWxgVC9KWWlQkMvk");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Dr. Smith</h1>
+<p class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">Clinician</p>
+</div>
+</div>
+<nav class="flex-grow flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-subtext-light dark:text-subtext-dark hover:bg-primary/10 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-subtext-light dark:text-subtext-dark hover:bg-primary/10 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<p class="text-sm font-medium">Pacientes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-subtext-light dark:text-subtext-dark hover:bg-primary/10 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium">Agenda</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">medication</span>
+<p class="text-sm font-medium">Farmácia</p>
+</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/10 text-primary hover:bg-primary/20 text-sm font-bold leading-normal tracking-[0.015em] mt-auto">
+<span class="material-symbols-outlined mr-2">logout</span>
+<span class="truncate">Logout</span>
+</button>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Nav Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark px-8 py-4 bg-card-light dark:bg-card-dark">
+<div class="flex-1">
+<p class="text-text-light dark:text-text-dark text-2xl font-black leading-tight tracking-tight">Farmácia</p>
+</div>
+<div class="flex items-center justify-end gap-6">
+<label class="relative flex-col min-w-40 !h-10 max-w-64">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-full placeholder:text-subtext-light dark:placeholder:text-subtext-dark pl-10 pr-4 text-sm font-normal leading-normal" placeholder="Search by item name or code" value=""/>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXEy9nw31di2xya97gayj2f_GR_lMUR-_tYUNEVyL-TOu9fRrEpt5KfGYolmPwQlQOiQjb8tbB_obNHRAjQjQJwVw9MLglqD6TXFb0iyAwu3io6XmdNIRE5rws_GM-zA8kJs7CUpjAoRZHt6kQLN7zdypR9DaDirhSd8xBAbRy6XSseVIPRPiLqsBPEUnrUcAq7cBrs3YXaUSEOehQgrd-KVSeJfwckWETwpMM9nh8VxswocSjgDE-4eJ0cnONSlB2BIZcb-Ob0a3v");'></div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<!-- Page Heading and Actions -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div>
+<h1 class="text-text-light dark:text-text-dark text-3xl font-extrabold">Inventory Management</h1>
+<p class="text-subtext-light dark:text-subtext-dark mt-1">Manage medications and equipment for the clinic.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-700 text-text-light dark:text-text-dark text-sm font-medium leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined mr-2">download</span>
+<span class="truncate">Export Report</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined mr-2">add</span>
+<span class="truncate">Adicionar Novo Item</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-border-light dark:border-border-dark">
+<th class="px-4 py-3 text-sm font-semibold text-subtext-light dark:text-subtext-dark">Código</th>
+<th class="px-4 py-3 text-sm font-semibold text-subtext-light dark:text-subtext-dark">Nome</th>
+<th class="px-4 py-3 text-sm font-semibold text-subtext-light dark:text-subtext-dark">Tipo</th>
+<th class="px-4 py-3 text-sm font-semibold text-subtext-light dark:text-subtext-dark">Quantidade</th>
+<th class="px-4 py-3 text-sm font-semibold text-subtext-light dark:text-subtext-dark">Validade</th>
+<th class="px-4 py-3 text-sm font-semibold text-subtext-light dark:text-subtext-dark">Status</th>
+<th class="px-4 py-3 text-sm font-semibold text-subtext-light dark:text-subtext-dark text-right">Ações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark">
+<td class="px-4 py-3 text-sm text-text-light dark:text-text-dark">00123</td>
+<td class="px-4 py-3 text-sm font-medium text-text-light dark:text-text-dark">Paracetamol 500mg</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">Medicamento</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">150</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">12/2025</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            Em Estoque
+                                        </span>
+</td>
+<td class="px-4 py-3 text-right">
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-primary transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-green-500 transition-colors"><span class="material-symbols-outlined text-base">add_circle</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-red-500 transition-colors"><span class="material-symbols-outlined text-base">remove_circle</span></button>
+</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark">
+<td class="px-4 py-3 text-sm text-text-light dark:text-text-dark">00124</td>
+<td class="px-4 py-3 text-sm font-medium text-text-light dark:text-text-dark">Seringa 10ml</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">Equipamento</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">50</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">N/A</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                                            Baixo Estoque
+                                        </span>
+</td>
+<td class="px-4 py-3 text-right">
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-primary transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-green-500 transition-colors"><span class="material-symbols-outlined text-base">add_circle</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-red-500 transition-colors"><span class="material-symbols-outlined text-base">remove_circle</span></button>
+</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark">
+<td class="px-4 py-3 text-sm text-text-light dark:text-text-dark">00125</td>
+<td class="px-4 py-3 text-sm font-medium text-text-light dark:text-text-dark">Gaze Estéril</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">Equipamento</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">20</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">01/2024</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                            Crítico
+                                        </span>
+</td>
+<td class="px-4 py-3 text-right">
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-primary transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-green-500 transition-colors"><span class="material-symbols-outlined text-base">add_circle</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-red-500 transition-colors"><span class="material-symbols-outlined text-base">remove_circle</span></button>
+</td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark">
+<td class="px-4 py-3 text-sm text-text-light dark:text-text-dark">00126</td>
+<td class="px-4 py-3 text-sm font-medium text-text-light dark:text-text-dark">Ibuprofeno 400mg</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">Medicamento</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">250</td>
+<td class="px-4 py-3 text-sm text-subtext-light dark:text-subtext-dark">08/2026</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            Em Estoque
+                                        </span>
+</td>
+<td class="px-4 py-3 text-right">
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-primary transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-green-500 transition-colors"><span class="material-symbols-outlined text-base">add_circle</span></button>
+<button class="p-1 text-subtext-light dark:text-subtext-dark hover:text-red-500 transition-colors"><span class="material-symbols-outlined text-base">remove_circle</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Empty state -->
+<!-- <div class="text-center py-16">
+                        <span class="material-symbols-outlined text-6xl text-subtext-light dark:text-subtext-dark">inventory_2</span>
+                        <h3 class="mt-4 text-lg font-medium text-text-light dark:text-text-dark">Nenhum item encontrado</h3>
+                        <p class="mt-1 text-sm text-subtext-light dark:text-subtext-dark">Clique em "Adicionar Novo Item" para começar.</p>
+                    </div> -->
+</div>
+<footer class="text-center text-sm text-subtext-light dark:text-subtext-dark mt-8">
+                    © 2024 Healthcare App. All rights reserved.
+                </footer>
+</div>
+</main>
+</div>
+</body></html>

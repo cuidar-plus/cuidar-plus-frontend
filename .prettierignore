@@ -1,0 +1,18 @@
+# Ignore artifacts
+dist/
+node_modules/
+.angular/
+coverage/
+storybook-static/
+
+# Ignore configuration files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore generated files
+*.log
+*.tsbuildinfo
+
+# Ignore mockups HTML files
+docs/Mockups\ de\ Telas/**/*.html

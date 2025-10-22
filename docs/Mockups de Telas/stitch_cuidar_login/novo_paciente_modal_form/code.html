@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Novo Paciente</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4a99e8",
+            "background-light": "#f6f7f8",
+            "background-dark": "#111921",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+<div class="relative w-full max-w-2xl bg-white dark:bg-background-dark rounded-xl shadow-lg flex flex-col">
+<div class="p-6 border-b border-gray-200 dark:border-gray-700">
+<h2 class="text-2xl font-bold text-[#0e141b] dark:text-white">Novo Paciente</h2>
+</div>
+<div class="p-6 flex-grow overflow-y-auto">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="flex flex-col">
+<p class="text-[#0e141b] dark:text-gray-300 text-base font-medium leading-normal pb-2">Nome completo</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal transition-shadow duration-200" placeholder="Digite o nome completo do paciente" value=""/>
+</label>
+</div>
+<div>
+<label class="flex flex-col">
+<p class="text-[#0e141b] dark:text-gray-300 text-base font-medium leading-normal pb-2">Idade</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal transition-shadow duration-200" placeholder="Ex: 35" value=""/>
+</label>
+</div>
+<div>
+<label class="flex flex-col">
+<p class="text-[#0e141b] dark:text-gray-300 text-base font-medium leading-normal pb-2">Telefone</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal transition-shadow duration-200" placeholder="(XX) XXXXX-XXXX" value=""/>
+</label>
+</div>
+<div class="col-span-2">
+<label class="flex flex-col">
+<p class="text-[#0e141b] dark:text-gray-300 text-base font-medium leading-normal pb-2">Diagnóstico</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal transition-shadow duration-200" placeholder="Diagnóstico principal" value=""/>
+</label>
+</div>
+<div class="col-span-2">
+<label class="flex flex-col">
+<p class="text-[#0e141b] dark:text-gray-300 text-base font-medium leading-normal pb-2">Endereço</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal transition-shadow duration-200" placeholder="Rua, número, bairro, cidade" value=""/>
+</label>
+</div>
+<div class="col-span-2">
+<label class="flex flex-col">
+<p class="text-[#0e141b] dark:text-gray-300 text-base font-medium leading-normal pb-2">Responsável</p>
+<div class="relative">
+<select class="form-select appearance-none w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 h-12 p-3 text-base font-normal leading-normal transition-shadow duration-200">
+<option>Dr. João Silva</option>
+<option>Dra. Maria Oliveira</option>
+<option>Dr. Carlos Pereira</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-400">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</label>
+</div>
+</form>
+</div>
+<div class="p-6 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-700 rounded-b-xl flex justify-end gap-4">
+<button class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:focus:ring-offset-background-dark transition-colors duration-200">
+          Cancelar
+        </button>
+<button class="px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-colors duration-200">
+          Salvar
+        </button>
+</div>
+</div>
+</div>
+</body></html>

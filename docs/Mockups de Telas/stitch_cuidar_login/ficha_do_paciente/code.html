@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ficha do Paciente</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4a99e8",
+            "background-light": "#f6f7f8",
+            "background-dark": "#111921",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-row">
+<aside class="flex flex-col gap-4 p-4 bg-white dark:bg-background-dark border-r border-gray-200 dark:border-gray-700 w-64">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Doctor Ana Oliveira's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlipXnSKLgV93oU0c79RptIf_l3UpuNB9ttYlld42hrLJXK3SFcL8KA4Gl-6_2lkYnzswB2LXDkZjeU6-95hX8EJhBNNX4V4aPm-ecnE8f4DMh40SC4iqhgpOU-l3kj4OZ3BxgqoIhh9J9PWfRjqZaSSoTNmSqRkHDefQ4isCqtDhUOQxicPgo_DR4ku4OAXdQtvkYjSub3Nb5axeq2d2QxICtF2W8d4Dj2ZPL58imCZznYhKfP6sEmOKcXK65SkfSw95wXvjpGP2s");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#0e141b] dark:text-white text-base font-medium leading-normal">Dr. Ana Oliveira</h1>
+<p class="text-[#4f7396] dark:text-gray-400 text-sm font-normal leading-normal">Clínica Geral</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#0e141b] dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#0e141b] dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Agenda</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary dark:bg-primary/30 dark:text-white" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-sm font-medium leading-normal">Pacientes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#0e141b] dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<p class="text-sm font-medium leading-normal">Relatórios</p>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Novo Paciente</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 p-6">
+<div class="layout-content-container flex flex-col max-w-full flex-1">
+<div class="flex p-4 @container bg-white dark:bg-background-dark rounded-xl shadow-sm">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-24 w-24" data-alt="Patient's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgMGIkoe81A7yva6cswQpEWyMeQUGTEt1f9m_3Cjo1rXt9dHpOqC1c-JKpi_kKYuKJGqKJ26lR2Pt-tzx_blo3LV6Y0w5Mfy1Gl5OqxThPzHbh7hBep1tgWM3w09cKI7HczxmZAk4EEety72LLbRzEBoc5sqqrFM61bUlBHp-2z3B210oXRkFpS6KHo5BGJgl4yp2xDBuRCyg2wFlf_d8tGoKDnPRkVI_QJ5zCdsTKwcD4rOjQfH8Sc-xRC1bEUrAupaVU3b-oIRK2");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#0e141b] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Ficha do Paciente</p>
+<div class="flex items-center gap-2 mt-1">
+<p class="text-[#4f7396] dark:text-gray-400 text-base font-normal leading-normal">Maria da Silva</p>
+<span class="inline-flex items-center px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">Tratamento Ativo</span>
+</div>
+</div>
+</div>
+<div class="flex w-full max-w-[480px] gap-3 @[480px]:w-auto">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/30 text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto">
+<span class="truncate">Editar</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto">
+<span class="truncate">Imprimir</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-6 bg-white dark:bg-background-dark rounded-xl shadow-sm">
+<div class="pb-3">
+<div class="flex border-b border-[#d0dbe6] dark:border-gray-700 px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary dark:text-white pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Dados</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4f7396] dark:text-gray-400 hover:text-primary dark:hover:text-white pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Evoluções</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4f7396] dark:text-gray-400 hover:text-primary dark:hover:text-white pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Medicações</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4f7396] dark:text-gray-400 hover:text-primary dark:hover:text-white pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Visitas</p>
+</a>
+</div>
+</div>
+<div class="p-4 grid grid-cols-1 md:grid-cols-2">
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#d0dbe6] dark:border-gray-700 py-4 pr-2">
+<p class="text-[#4f7396] dark:text-gray-400 text-sm font-normal leading-normal">Diagnóstico</p>
+<p class="text-[#0e141b] dark:text-white text-sm font-normal leading-normal">Ansiedade Generalizada</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#d0dbe6] dark:border-gray-700 py-4 md:pl-2">
+<p class="text-[#4f7396] dark:text-gray-400 text-sm font-normal leading-normal">Endereço</p>
+<p class="text-[#0e141b] dark:text-white text-sm font-normal leading-normal">Rua das Flores, 123, São Paulo, SP</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#d0dbe6] dark:border-gray-700 py-4 pr-2">
+<p class="text-[#4f7396] dark:text-gray-400 text-sm font-normal leading-normal">Telefone</p>
+<p class="text-[#0e141b] dark:text-white text-sm font-normal leading-normal">(11) 99999-8888</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#d0dbe6] dark:border-gray-700 py-4 md:pl-2">
+<p class="text-[#4f7396] dark:text-gray-400 text-sm font-normal leading-normal">Enfermeiro Responsável</p>
+<p class="text-[#0e141b] dark:text-white text-sm font-normal leading-normal">Carlos Pereira</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#d0dbe6] dark:border-gray-700 py-4 pr-2">
+<p class="text-[#4f7396] dark:text-gray-400 text-sm font-normal leading-normal">Idade</p>
+<p class="text-[#0e141b] dark:text-white text-sm font-normal leading-normal">34 anos</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#d0dbe6] dark:border-gray-700 py-4 md:pl-2">
+<p class="text-[#4f7396] dark:text-gray-400 text-sm font-normal leading-normal">Gênero</p>
+<p class="text-[#0e141b] dark:text-white text-sm font-normal leading-normal">Feminino</p>
+</div>
+</div>
+<div class="flex justify-stretch border-t border-t-[#d0dbe6] dark:border-gray-700">
+<div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/30 text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Ver Prontuário Completo</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Nova Anotação</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

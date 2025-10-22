@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cuidar+ Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4A90E2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "accent-green": "#00B894",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center items-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-md space-y-8">
+<div>
+<div class="flex justify-center items-center">
+<span class="material-symbols-outlined text-primary text-5xl">favorite</span>
+<span class="material-symbols-outlined text-primary text-3xl -ml-2">add</span>
+</div>
+<h2 class="mt-6 text-center text-3xl font-black text-[#0e141b] dark:text-white font-display">
+                            Bem-vindo de volta!
+                        </h2>
+<p class="mt-2 text-center text-sm text-[#4f7396] dark:text-gray-400 font-display">
+                            Acesse sua conta Cuidar+
+                        </p>
+</div>
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-lg p-8 space-y-6">
+<div class="flex flex-col gap-y-6">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0e141b] dark:text-gray-200 text-sm font-medium leading-normal pb-2 font-display">Email</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 h-12 placeholder:text-[#4f7396] p-3 text-base font-normal leading-normal font-display" placeholder="Digite seu email" type="email" value=""/>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0e141b] dark:text-gray-200 text-sm font-medium leading-normal pb-2 font-display">Senha</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 h-12 placeholder:text-[#4f7396] p-3 text-base font-normal leading-normal font-display" placeholder="Digite sua senha" type="password" value=""/>
+</label>
+</div>
+<div class="flex flex-col items-center justify-center space-y-4">
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] font-display hover:bg-primary/90 transition-colors duration-200">
+<span class="truncate">Entrar</span>
+</button>
+<p class="text-accent-green text-sm font-normal leading-normal text-center underline font-display cursor-pointer hover:text-accent-green/80 transition-colors duration-200">Esqueci minha senha</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

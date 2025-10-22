@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cuidar+ Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#93B5C6",
+                        "secondary": "#A2D5AB",
+                        "background-light": "#F7F7F7",
+                        "background-dark": "#111921",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1a2632",
+                        "text-light": "#333333",
+                        "text-dark": "#E5E7EB",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-primary flex flex-col p-4 text-white">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cuidar+ logo placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIXHFZee0BIKk5GUcz_CJVoYTvfDxv720-pu5h4FLmZguunNmzdXyZ4N06JdNa-MDqN3exCZ8J_Ngs9dCZBY2yEmJuY-bZCejgplfFRS_hpb9lBA8igGxmUFaaGJo7E-4PF38l84viFxW-UR-PDNsHhRiaZODtDC316jnnbLqf0U8TCFLCoK-7Pp8ZohmPpiB_M_rGE4Cb-9jpGp4YN7T5ZfSrnxOAR3eiYkIRW3h6hSOXiSTrhr256kPX7SRROm0PzLCg7PPFbXHc");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold">Cuidar+</h1>
+<p class="text-white/80 text-sm">Home Care</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/20" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">groups</span>
+<p class="text-sm font-medium">Patients</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">watch</span>
+<p class="text-sm font-medium">Visits</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">medication</span>
+<p class="text-sm font-medium">Medications</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">description</span>
+<p class="text-sm font-medium">Reports</p>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700 px-10 py-4 bg-card-light dark:bg-card-dark shadow-sm">
+<h2 class="text-xl font-bold">Dashboard</h2>
+<div class="flex flex-1 justify-end items-center gap-6">
+<label class="flex items-center min-w-40 max-w-64 h-10 bg-background-light dark:bg-background-dark rounded-lg">
+<span class="material-symbols-outlined text-gray-500 pl-3">search</span>
+<input class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-500 px-2 text-sm font-normal" placeholder="Search..." value=""/>
+</label>
+<button class="flex items-center justify-center rounded-full size-10 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtbNMCncL2gxAMcMvofHTJMRHrwTbex23laUAJ8-D12pOv2VcAaWx8JgpELuxSXWSw0ShnMeg8F6bJ1hP_nZVEVtovTO5f6_Nlnh_4nY2ofip-C33rPqA5Nzu--mmSE_hC7BDVySNtHmFfQ3tdXDnUDb0VezG5EQ5aP8toMm3-cCfTLQbhAVtUT29-tci-onv0IKBvEXqaEaYL3u4Ex2a7Fz3q8iBYMLEj60oQZ0LOJ7YvogkZtGskoB6hdPuxx_vX1DFIIcJhFI79");'></div>
+<div class="flex flex-col">
+<p class="font-semibold text-sm">Dr. Jane Doe</p>
+<p class="text-xs text-gray-500">Administrator</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 p-8 overflow-y-auto">
+<!-- Statistic Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="text-base font-medium text-gray-600 dark:text-gray-400">Total Patients</p>
+<p class="text-3xl font-bold my-1">1,250</p>
+<p class="text-sm font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_up</span>+1.5%
+                        </p>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="text-base font-medium text-gray-600 dark:text-gray-400">Active Visits</p>
+<p class="text-3xl font-bold my-1">350</p>
+<p class="text-sm font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_up</span>+5.2%
+                        </p>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="text-base font-medium text-gray-600 dark:text-gray-400">Pending Tasks</p>
+<p class="text-3xl font-bold my-1">45</p>
+<p class="text-sm font-medium text-red-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_down</span>-2.0%
+                        </p>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="text-base font-medium text-gray-600 dark:text-gray-400">Medications in Use</p>
+<p class="text-3xl font-bold my-1">89</p>
+<p class="text-sm font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_up</span>+3.7%
+                        </p>
+</div>
+</div>
+<!-- Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="text-base font-medium">Patient Admission Trends</p>
+<p class="text-2xl font-bold truncate">150 admissions</p>
+<div class="flex gap-1 items-center">
+<p class="text-sm text-gray-500">Last 30 days</p>
+<p class="text-sm font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_up</span>+10%
+                            </p>
+</div>
+<div class="flex-1 flex flex-col gap-4 py-4 min-h-[220px]">
+<svg fill="none" height="180" preserveaspectratio="none" viewbox="0 0 472 180" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="100%">
+<stop offset="0%" stop-color="#93B5C6" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#93B5C6" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 130.8C18.1538 130.8 18.1538 25.2 36.3077 25.2C54.4615 25.2 54.4615 49.2 72.6154 49.2C90.7692 49.2 90.7692 111.6 108.923 111.6C127.077 111.6 127.077 39.6 145.231 39.6C163.385 39.6 163.385 121.2 181.538 121.2C199.692 121.2 199.692 73.2 217.846 73.2C236 73.2 236 54 254.154 54C272.308 54 272.308 145.2 290.462 145.2C308.615 145.2 308.615 178.8 326.769 178.8C344.923 178.8 344.923 1.2 363.077 1.2C381.231 1.2 381.231 97.2 399.385 97.2C417.538 97.2 417.538 154.8 435.692 154.8C453.846 154.8 453.846 30 472 30" stroke="#93B5C6" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 130.8C18.1538 130.8 18.1538 25.2 36.3077 25.2C54.4615 25.2 54.4615 49.2 72.6154 49.2C90.7692 49.2 90.7692 111.6 108.923 111.6C127.077 111.6 127.077 39.6 145.231 39.6C163.385 39.6 163.385 121.2 181.538 121.2C199.692 121.2 199.692 73.2 217.846 73.2C236 73.2 236 54 254.154 54C272.308 54 272.308 145.2 290.462 145.2C308.615 145.2 308.615 178.8 326.769 178.8C344.923 178.8 344.923 1.2 363.077 1.2C381.231 1.2 381.231 97.2 399.385 97.2C417.538 97.2 417.538 154.8 435.692 154.8C453.846 154.8 453.846 30 472 30V180H0V130.8Z" fill="url(#chartGradient)"></path>
+</svg>
+<div class="flex justify-around text-xs font-bold text-gray-500">
+<p>Week 1</p><p>Week 2</p><p>Week 3</p><p>Week 4</p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="text-base font-medium">Visit Status Distribution</p>
+<p class="text-2xl font-bold truncate">350 visits</p>
+<div class="flex gap-1 items-center">
+<p class="text-sm text-gray-500">This week</p>
+<p class="text-sm font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_up</span>+5%
+                            </p>
+</div>
+<div class="flex items-center justify-center min-h-[220px] py-4">
+<div class="relative w-48 h-48">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#e6e6e6" stroke-width="3.8"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#A2D5AB" stroke-dasharray="60, 100" stroke-width="3.8"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#FBBF24" stroke-dasharray="30, 100" stroke-dashoffset="-60" stroke-width="3.8"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#EF4444" stroke-dasharray="10, 100" stroke-dashoffset="-90" stroke-width="3.8"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold">350</span>
+<span class="text-sm text-gray-500">Total Visits</span>
+</div>
+</div>
+<div class="ml-8 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<p class="text-sm">Completed (60%)</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+<p class="text-sm">Scheduled (30%)</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-red-500"></span>
+<p class="text-sm">Cancelled (10%)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Patient List & Recent Activity -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<div class="xl:col-span-2 bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<h2 class="text-lg font-bold mb-4">High-Priority Patients</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="text-xs text-gray-500 uppercase bg-background-light dark:bg-background-dark">
+<tr>
+<th class="px-6 py-3 rounded-l-lg" scope="col">Patient Name</th>
+<th class="px-6 py-3" scope="col">Condition</th>
+<th class="px-6 py-3" scope="col">Assigned Nurse</th>
+<th class="px-6 py-3 rounded-r-lg" scope="col">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b dark:border-gray-700">
+<td class="px-6 py-4 font-medium">John Smith</td>
+<td class="px-6 py-4">Post-Surgery Care</td>
+<td class="px-6 py-4">Emily White</td>
+<td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">High Risk</span></td>
+</tr>
+<tr class="border-b dark:border-gray-700">
+<td class="px-6 py-4 font-medium">Maria Garcia</td>
+<td class="px-6 py-4">Diabetes Management</td>
+<td class="px-6 py-4">Michael Brown</td>
+<td class="px-6 py-4"><span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Moderate Risk</span></td>
+</tr>
+<tr class="border-b dark:border-gray-700">
+<td class="px-6 py-4 font-medium">Robert Johnson</td>
+<td class="px-6 py-4">Cardiac Rehab</td>
+<td class="px-6 py-4">Sarah Green</td>
+<td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">High Risk</span></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Linda Williams</td>
+<td class="px-6 py-4">Wound Care</td>
+<td class="px-6 py-4">David Miller</td>
+<td class="px-6 py-4"><span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Stable</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<h2 class="text-lg font-bold mb-4">Recent Activity</h2>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<div class="bg-secondary/20 text-secondary rounded-full p-2"><span class="material-symbols-outlined text-base">person_add</span></div>
+<div>
+<p class="text-sm font-medium">New patient <span class="font-bold">Anna Taylor</span> assigned.</p>
+<p class="text-xs text-gray-500">10 minutes ago</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary/20 text-primary rounded-full p-2"><span class="material-symbols-outlined text-base">check_circle</span></div>
+<div>
+<p class="text-sm font-medium">Visit for <span class="font-bold">John Smith</span> completed.</p>
+<p class="text-xs text-gray-500">1 hour ago</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-yellow-400/20 text-yellow-500 rounded-full p-2"><span class="material-symbols-outlined text-base">pending_actions</span></div>
+<div>
+<p class="text-sm font-medium">Medication for <span class="font-bold">Maria Garcia</span> pending approval.</p>
+<p class="text-xs text-gray-500">3 hours ago</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-red-500/20 text-red-500 rounded-full p-2"><span class="material-symbols-outlined text-base">warning</span></div>
+<div>
+<p class="text-sm font-medium">Alert: Vitals for <span class="font-bold">Robert Johnson</span> are out of range.</p>
+<p class="text-xs text-gray-500">Yesterday</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
